@@ -1,7 +1,7 @@
 module.exports = function ({ api, models, Users, Threads, Currencies }) {
     const logger = require("../../catalogs/Senayelc.js")
     return function ({ event }) {
-        const { allowInbox } = global.Nayan;
+        const { allowInbox } = global.Senayel;
         const { userBanned, threadBanned } = global.data;
         const { commands, eventRegistered } = global.client;
         var { senderID, threadID } = event;
