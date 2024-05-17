@@ -1,5 +1,5 @@
 module.exports = function ({ api, models, Users, Threads, Currencies }) {
-    const logger = require("../../catalogs/Nayanc.js")
+    const logger = require("../../catalogs/Senayelc.js")
     return function ({ event }) {
         const { allowInbox } = global.Nayan;
         const { userBanned, threadBanned } = global.data;
