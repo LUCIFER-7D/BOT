@@ -4,7 +4,7 @@
     name: "antispam",
     version: "1.0.0",
     permission: 0,
-    credits: "nayan",
+    credits: "senayel",
     description: "automatically ban spammer",
     prefix: true,
     category: "system",
