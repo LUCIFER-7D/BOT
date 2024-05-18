@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "anime", 
   version: "1.0.0", 
   permission: 0,
-  credits: "Nayan",
+  credits: "Senayel",
   description: "Random anime video",
   prefix: true,
   category: "Media", 
@@ -18,11 +18,11 @@ module.exports.config = {
 const videoDATA = "https://5025dd35-d3b6-4e53-8f7e-b40e5488f9dc-00-2xr6zjnwy871b.global.replit.dev/video/anime";
 
 module.exports.onLoad = ({}) => {
-  if (!global.nodemodule["fs"].existsSync(__dirname + '/nayan')) {
-    global.nodemodule["fs"].mkdirSync(__dirname + '/nayan');
+  if (!global.nodemodule["fs"].existsSync(__dirname + '/senayel')) {
+    global.nodemodule["fs"].mkdirSync(__dirname + '/senayel');
   }
-  global.nodemodule["fs"].readdirSync(__dirname + '/nayan').forEach(file => {
-    global.nodemodule["fs"].unlinkSync(__dirname + `/nayan/${file}`);
+  global.nodemodule["fs"].readdirSync(__dirname + '/senayel').forEach(file => {
+    global.nodemodule["fs"].unlinkSync(__dirname + `/senayel/${file}`);
   })
 }
 
