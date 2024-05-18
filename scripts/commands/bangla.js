@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "bangla",
     version: "1.0.1",
     permission: 0,
-    credits: "Nayan",
+    credits: "Senayel",
     prefix: true,
     description: "ask any thing",
     category: "admin",
