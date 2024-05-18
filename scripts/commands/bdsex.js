@@ -2,7 +2,7 @@ module.exports.config = {
   name: "sex",
   version: "1.0.0",
   permission: 2,
-  credits: "Nayan",
+  credits: "Senayel",
   description: "Sex pic",
   prefix: true, 
   category: "user", 
