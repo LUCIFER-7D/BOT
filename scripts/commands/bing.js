@@ -3,7 +3,7 @@
     name: "bing",
     version: "1.0.0",
     permission: 0,
-    credits: "Nayan",
+    credits: "Senayel",
     description: "",
     prefix: 'awto',
     category: "auto prefix",
@@ -18,7 +18,7 @@
        }
    },
 
-start: async function({ nayan, events, args, lang}) {
+start: async function({ senayel, events, args, lang}) {
     const axios = require("axios");
     const fs = require("fs-extra");
     const request = require("request");
@@ -26,7 +26,7 @@ start: async function({ nayan, events, args, lang}) {
     const key = this.config.credits;
     const apis = await axios.get('https://raw.githubusercontent.com/MOHAMMAD-NAYAN/Nayan/main/api.json')
   const n = apis.data.bing
-    if(!prompt) return nayan.reply(lang('missing'), events.threadID, events.messageID)
+    if(!prompt) return senayel.reply(lang('missing'), events.threadID, events.messageID)
 
   const rndm = ['cookie'] // input your cookie hare
 
