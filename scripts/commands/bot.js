@@ -3,7 +3,7 @@ module.exports.config = {
   version: "0.0.2",
   permission: 0,
   prefix: false,
-  credits: "Nayan",
+  credits: "Senayel",
   description: "talk with bot",
   category: "user",
   usages: "",
