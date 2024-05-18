@@ -3,7 +3,7 @@ module.exports.config = {
     version: "1.0.5",
     permission: 2,
     prefix: true,
-    credits: "Nayan",
+    credits: "Senayel",
     description: "𝘿𝙤𝙣'𝙩 𝙨𝙖𝙮 𝙗𝙖𝙙𝙬𝙤𝙧𝙙𝙨 𝙥𝙡𝙚𝙖𝙨𝙚",
     category: "Utility",
     usage: "add [word]",
