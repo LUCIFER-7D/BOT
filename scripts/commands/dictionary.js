@@ -4,7 +4,7 @@ module.exports.config = {
   version: "1.0.0",
   permssion: 0,
   prefix: true,
-  credits: "nayan",
+  credits: "senayel",
   description: "",
   usage: "[text]",
   category: "study",
