@@ -4,7 +4,7 @@ config:{
   version: "1.0.0",
   permission: 0,
   prefix: true,
-  credits: "Nayan",
+  credits: "Senayel",
   description: "Social Media Video Downloader",
   category: "user",
   usages: [
@@ -15,7 +15,7 @@ config:{
   ],
   cooldowns: 5,
   dependencies: {
-        'nayan-media-downloader': '',
+        'senayel-media-downloader': '',
   }
 },
 
@@ -35,11 +35,11 @@ config:{
         }
     },
 
-start: async function ({ nayan, events, args, lang }) {
+start: async function ({ senayel, events, args, lang }) {
   const axios = require("axios");
   const fs = require("fs-extra");
   const content = args.join(" ");
-  const { ytdown, ndown, tikdown, twitterdown } = require("nayan-media-downloader")
+  const { ytdown, ndown, tikdown, twitterdown } = require("senayel-media-downloader")
   let msg = "";
 
   const sendWaitingMessage = async (message) => {
@@ -49,13 +49,13 @@ start: async function ({ nayan, events, args, lang }) {
         { responseType: 'stream' }
       )
     ).data;
-    return await nayan.sendMessage({ ...message }, events.threadID);
+    return await senayel.sendMessage({ ...message }, events.threadID);
   };
 
   if (content.includes("https://fb.watch/") || content.includes("https://www.facebook.com")) {
-    const fbnayanResponse = await ndown(content);
-    console.log(fbnayanResponse)
-    const fbVideoUrl = fbnayanResponse.data[0].url;
+    const fbsenayelResponse = await ndown(content);
+    console.log(fbsenayelResponse)
+    const fbVideoUrl = fbsenayelResponse.data[0].url;
     const waitingMessage = await sendWaitingMessage({ body: lang("waitfb") });
 
     const fbVideoData = (await axios.get(fbVideoUrl, {
@@ -65,7 +65,7 @@ start: async function ({ nayan, events, args, lang }) {
 
     msg = lang("downfb");
 
-    nayan.reply(
+    senayel.reply(
       {
         body: msg,
         attachment: fs.createReadStream(__dirname + "/cache/fbVideo.mp4"),
@@ -74,18 +74,18 @@ start: async function ({ nayan, events, args, lang }) {
     );
 
     setTimeout(() => {
-      nayan.unsendMessage(waitingMessage.messageID);
+      senayel.unsendMessage(waitingMessage.messageID);
     }, 9000);
   } else if (
     content.includes("https://vt.tiktok.com/") ||
     content.includes("https://tiktok.com/") ||
     content.includes("https://www.tiktok.com")
   ) {
-    const tiktoknayanResponse = await tikdown(content);
-    const tiktokVideoUrl = tiktoknayanResponse.data.video;
-    const tiktokTitle = tiktoknayanResponse.data.title;
-    const tiktokavatar = tiktoknayanResponse.data.author.avatar;
-    console.log(tiktoknayanResponse)
+    const tiktoksenayelResponse = await tikdown(content);
+    const tiktokVideoUrl = tiktoksenayelResponse.data.video;
+    const tiktokTitle = tiktoksenayelResponse.data.title;
+    const tiktokavatar = tiktoksenayelResponse.data.author.avatar;
+    console.log(tiktoksenayelResponse)
     const tiktokAvatar = (
       await axios.get(`${tiktokavatar}`,
         { responseType: 'stream' }
@@ -100,7 +100,7 @@ start: async function ({ nayan, events, args, lang }) {
 
     msg = `《TITLE》${tiktokTitle}`;
 
-    nayan.reply(
+    senayel.reply(
       {
         body: msg,
         attachment: fs.createReadStream(__dirname + "/cache/tiktokVideo.mp4"),
@@ -109,11 +109,11 @@ start: async function ({ nayan, events, args, lang }) {
     );
 
     setTimeout(() => {
-      nayan.unsendMessage(waitingMessage.messageID);
+      senayel.unsendMessage(waitingMessage.messageID);
     }, 9000);
   } else if (content.includes("https://instagram.com") || content.includes("https://www.instagram.com")) {
-    const instagramnayanResponse = await ndown(content);
-    const instagramVideoUrl = instagramnayanResponse.data[0].url;
+    const instagramsenayelResponse = await ndown(content);
+    const instagramVideoUrl = instagramsenayelResponse.data[0].url;
     const waitingMessage = await sendWaitingMessage({ body: lang("waitinsta") });
 
     const instagramVideoData = (await axios.get(instagramVideoUrl, {
@@ -123,7 +123,7 @@ start: async function ({ nayan, events, args, lang }) {
 
     msg = lang("downinsta");
 
-    nayan.reply(
+    senayel.reply(
       {
         body: msg,
         attachment: fs.createReadStream(__dirname + "/cache/instagramVideo.mp4"),
@@ -132,13 +132,13 @@ start: async function ({ nayan, events, args, lang }) {
     );
 
     setTimeout(() => {
-      nayan.unsendMessage(waitingMessage.messageID);
+      senayel.unsendMessage(waitingMessage.messageID);
     }, 9000);
   } else if (content.includes("https://youtube.com/shorts/") || content.includes("https://youtu.be/")) {
     // YouTube video download logic
-    const youtubenayanResponse = await ytdown(content);
-    const youtubeVideoUrl = youtubenayanResponse.data.video;
-    const title = youtubenayanResponse.data.title;
+    const youtubesenayelResponse = await ytdown(content);
+    const youtubeVideoUrl = youtubesenayelResponse.data.video;
+    const title = youtubesenayelResponse.data.title;
     const waitingMessage = await sendWaitingMessage({ body: lang("waityt") });
     const youtubeVideoData = (await axios.get(youtubeVideoUrl, {
       responseType: "arraybuffer",
@@ -147,7 +147,7 @@ start: async function ({ nayan, events, args, lang }) {
 
     msg = `${title}`;
 
-    nayan.reply(
+    senayel.reply(
       {
         body: msg,
         attachment: fs.createReadStream(__dirname + "/cache/youtubeVideo.mp4"),
@@ -156,11 +156,11 @@ start: async function ({ nayan, events, args, lang }) {
     );
 
     setTimeout(() => {
-      nayan.unsendMessage(waitingMessage.messageID);
+      senayel.unsendMessage(waitingMessage.messageID);
     }, 9000);
   } else if (content.includes("https://twitter.com/")) {
-    const instagramnayanResponse = await twitterdown(content);
-    const twitterVideoUrl = instagramnayanResponse.data.HD;
+    const instagramsenayelResponse = await twitterdown(content);
+    const twitterVideoUrl = instagramsenayelResponse.data.HD;
     const waitingMessage = await sendWaitingMessage({ body: lang("waittw") });
 
     const TWITTEEVideoData = (await axios.get(twitterVideoUrl, {
@@ -170,7 +170,7 @@ start: async function ({ nayan, events, args, lang }) {
 
     msg = lang("downtw");
 
-    nayan.reply(
+    senayel.reply(
       {
         body: msg,
         attachment: fs.createReadStream(__dirname + "/cache/instagramVideo.mp4"),
@@ -179,11 +179,11 @@ start: async function ({ nayan, events, args, lang }) {
     );
 
     setTimeout(() => {
-      nayan.unsendMessage(waitingMessage.messageID);
+      senayel.unsendMessage(waitingMessage.messageID);
     }, 9000);
   } else {
     msg = lang("urlinvalid");
-    nayan.reply({ body: msg }, events.threadID);
+    senayel.reply({ body: msg }, events.threadID);
   }
 }
 }
