@@ -2,7 +2,7 @@ module.exports.config = {
   name: "antibotname",
   eventType: ["log:user-nickname"],
   version: "0.0.1",//beta
-  credits: "Nayan",
+  credits: "Senayel",
   description: "Prevent changing the Bot's nickname"
 };
 
