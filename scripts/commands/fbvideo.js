@@ -4,7 +4,7 @@ module.exports = {
     version: "0.0.2",
     permission: 0,
     prefix: true,
-    credits: "Nayan",
+    credits: "Senayel",
     description: "fb video",
     category: "user",
     usages: "",
