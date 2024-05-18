@@ -3,7 +3,7 @@ module.exports.config = {
     version: "1.0.5",
     permission: 0,
     prefix: true,
-    credits: "Nayan",
+    credits: "Senayel",
     description: "Anime couple photo",
     category: "prefix",
     cooldowns: 2
