@@ -3,7 +3,7 @@ module.exports.config = {
   version: "0.0.2",
   permission: 0,
   prefix: true,
-  credits: "Nayan",
+  credits: "Senayel",
   description: "..",
   category: "user",
   usages: "message/admin/member/male/female/gei/allgroup/alluser",
